@@ -16,7 +16,6 @@ function playRound(playerMove, computerMove) {
 
   if (playerMove === computerMove) {
     return `It's a tie!`;
-
   }
   if (winningCombinations[playerMove] === computerMove) {
     playerScore++;
