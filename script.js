@@ -1,10 +1,10 @@
-let moves = ["Rock", "Paper", "Scissors"];
+const moves = ["Rock", "Paper", "Scissors"];
 let playerScore = 0,
   computerScore = 0;
 
 getComputerChoice = () => moves[Math.floor(Math.random() * 3)];
 
-let winningCombinations = {
+const winningCombinations = {
   ROCK: "SCISSORS",
   PAPER: "ROCK",
   SCISSORS: "PAPER",
