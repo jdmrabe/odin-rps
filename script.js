@@ -9,9 +9,9 @@ const winningCombinations = {
 };
 
 const emojify = {
-  Rock: "&#9994;",
-  Paper: "&#9995;",
-  Scissors: "&#9996;",
+  Rock: "./img/Rock.svg",
+  Paper: "./img/Paper.svg",
+  Scissors: "./img/Scissors.svg",
 };
 
 getComputerChoice = () => possibleMoves[Math.floor(Math.random() * 3)];
@@ -30,8 +30,8 @@ function playRound(playerMove, computerMove) {
 }
 
 const moves = document.querySelectorAll(".moves button");
-const player = document.querySelector("#playerMove");
-const computer = document.querySelector("#computerMove");
+const player = document.getElementById("playerMove");
+const computer = document.getElementById("computerMove");
 
 moves.forEach((button) => {
   button.addEventListener("click", () => {
@@ -40,7 +40,7 @@ moves.forEach((button) => {
 
     playRound(playerChoice, computerChoice);
 
-    playerMove.innerHTML = emojify[playerChoice];
-    computerMove.innerHTML = emojify[computerChoice];
+    player.src = emojify[playerChoice];
+    computer.src = emojify[computerChoice];
   });
 });
