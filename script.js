@@ -29,14 +29,14 @@ getComputerChoice = () => possibleMoves[Math.floor(Math.random() * 3)];
 
 function playRound(playerMove, computerMove) {
   if (playerMove === computerMove) {
-    return "TIE";
+    return "ROUND TIE";
   }
   if (winningCombinations[playerMove] === computerMove) {
     playerScore++;
-    return "WIN!";
+    return "ROUND WIN!";
   } else {
     computerScore++;
-    return "LOSE";
+    return "ROUND LOSS";
   }
 }
 
@@ -86,7 +86,7 @@ function drawPlayAgain() {
   replay.setAttribute("id", "replay");
   replay.setAttribute("class", "slide-down");
   replay.textContent = "PLAY AGAIN";
-  replay.style.width = "360px";
+  replay.style.width = "320px";
 
   container.appendChild(replay);
 

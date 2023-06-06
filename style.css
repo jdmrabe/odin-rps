@@ -84,6 +84,10 @@ button:hover {
   animation: slideUp ease 200ms forwards;
 }
 
+#result {
+  flex: auto;
+}
+
 @keyframes slideDown {
   0% {
     transform: translateY(-3rem);
