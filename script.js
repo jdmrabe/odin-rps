@@ -36,4 +36,14 @@ function game(rounds) {
   console.log(`Player: ${playerScore} | Computer: ${computerScore}`);
 }
 
-game(5);
+const rock = document.querySelector("#rock").addEventListener("click", getMove);
+const paper = document
+  .querySelector("#paper")
+  .addEventListener("click", getMove);
+const scissors = document
+  .querySelector("#scissors")
+  .addEventListener("click", getMove);
+
+function getMove() {
+  console.log(this.id);
+}
