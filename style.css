@@ -20,7 +20,11 @@ button {
   border-radius: 0.6rem;
   border: none;
   padding: 0.6rem;
+
+  cursor: pointer;
+
   font-size: 1.5rem;
+  font-family: inherit;
   color: inherit;
 
   transition: all 300ms;
@@ -29,11 +33,31 @@ button:hover {
   background-color: hsl(0, 0%, 80%);
   color: hsl(0, 0%, 7%);
 }
+.disabled,
+.disabled:hover {
+  background-color: hsl(0, 0%, 80%);
+  color: hsl(0, 0%, 60%);
+}
 .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.streak-container {
+  display: flex;
+  padding: 1.25rem;
+  border: 0.5rem hsl(0, 0%, 60%) solid;
+  border-radius: 3rem;
+  font-size: 1.5rem;
+  gap: 0.5rem;
+}
+.game-container {
   display: flex;
   gap: 4rem;
 }
-.container > * {
+.game-container > * {
   flex: 1;
   display: flex;
   justify-content: center;
@@ -42,9 +66,46 @@ button:hover {
 .moves {
   display: flex;
   gap: 1rem;
-  width: 400px;
+  width: 520px;
 }
 .moves > * {
   flex: 1;
-  cursor: pointer;
+}
+
+.slide-down {
+  opacity: 0;
+  transition: all 100ms;
+  animation: slideDown ease 200ms forwards;
+}
+
+.slide-up {
+  opacity: 1;
+  transition: all 100ms;
+  animation: slideUp ease 200ms forwards;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-3rem);
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    transform: translateY(-3rem);
+    opacity: 0;
+    visibility: hidden;
+  }
 }
