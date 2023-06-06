@@ -1,8 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap");
-
 html {
   background-color: hsl(0, 0%, 7%);
-  font-family: "Rubik", sans-serif;
+  font-family: system-ui;
   color: hsl(0, 0%, 100%);
 }
 body {
@@ -27,8 +25,17 @@ button:hover {
   background-color: hsl(0, 0%, 80%);
   color: hsl(0, 0%, 7%);
 }
-.result {
-  font-size: 3rem;
+.container {
+  display: flex;
+  font-size: 2rem;
+  gap: 1rem;
+  width: 500px;
+}
+.container > * {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .moves {
   display: flex;
@@ -39,3 +46,8 @@ button:hover {
   flex: 1;
   cursor: pointer;
 }
+
+/* #playerMove,
+#computerMove {
+  font-size: 4rem;
+} */

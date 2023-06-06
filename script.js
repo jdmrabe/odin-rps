@@ -3,9 +3,9 @@ let playerScore = 0,
   computerScore = 0;
 
 const winningCombinations = {
-  ROCK: "SCISSORS",
-  PAPER: "ROCK",
-  SCISSORS: "PAPER",
+  Rock: "Scissors",
+  Paper: "Rock",
+  Scissors: "Paper",
 };
 
 const emojify = {
@@ -17,9 +17,6 @@ const emojify = {
 getComputerChoice = () => possibleMoves[Math.floor(Math.random() * 3)];
 
 function playRound(playerMove, computerMove) {
-  playerMove = playerMove.toUpperCase();
-  computerMove = computerMove.toUpperCase();
-
   if (playerMove === computerMove) {
     return console.log(`It's a tie!`);
   }
