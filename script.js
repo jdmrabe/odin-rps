@@ -18,29 +18,35 @@ getComputerChoice = () => possibleMoves[Math.floor(Math.random() * 3)];
 
 function playRound(playerMove, computerMove) {
   if (playerMove === computerMove) {
-    return console.log(`It's a tie!`);
+    return "TIE";
   }
   if (winningCombinations[playerMove] === computerMove) {
     playerScore++;
-    return console.log(`You win! ${playerMove} beats ${computerMove}`);
+    return "WIN!";
   } else {
     computerScore++;
-    return console.log(`You lose! ${computerMove} beats ${playerMove}`);
+    return "LOSE";
   }
 }
 
 const moves = document.querySelectorAll(".moves button");
 const player = document.getElementById("playerMove");
 const computer = document.getElementById("computerMove");
+const playerTally = document.getElementById("playerScore");
+const computerTally = document.getElementById("computerScore");
+const result = document.getElementById("result");
 
 moves.forEach((button) => {
   button.addEventListener("click", () => {
     let playerChoice = button.id;
     let computerChoice = getComputerChoice();
 
-    playRound(playerChoice, computerChoice);
+    result.innerText = playRound(playerChoice, computerChoice);
 
     player.src = emojify[playerChoice];
     computer.src = emojify[computerChoice];
+
+    playerTally.innerText = playerScore;
+    computerTally.innerText = computerScore;
   });
 });

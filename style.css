@@ -1,6 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap");
+
 html {
   background-color: hsl(0, 0%, 7%);
-  font-family: system-ui;
+  font-family: "Roboto Mono", monospace, system-ui;
+  font-weight: bold;
   color: hsl(0, 0%, 100%);
 }
 body {
@@ -10,10 +13,11 @@ body {
   align-items: center;
   padding: 160px;
   gap: 1rem;
+  font-size: 2rem;
 }
 button {
   background-color: hsl(0, 0%, 20%);
-  border-radius: 0.25rem;
+  border-radius: 0.6rem;
   border: none;
   padding: 0.6rem;
   font-size: 1.5rem;
@@ -27,9 +31,7 @@ button:hover {
 }
 .container {
   display: flex;
-  font-size: 2rem;
-  gap: 1rem;
-  width: 500px;
+  gap: 4rem;
 }
 .container > * {
   flex: 1;
@@ -46,8 +48,3 @@ button:hover {
   flex: 1;
   cursor: pointer;
 }
-
-/* #playerMove,
-#computerMove {
-  font-size: 4rem;
-} */
