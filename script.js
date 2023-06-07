@@ -47,6 +47,10 @@ moves.forEach((button) => {
     let computerChoice = getComputerChoice();
 
     result.innerText = playRound(playerChoice, computerChoice);
+    result.classList.toggle("fade-in");
+    setTimeout(() => {
+      result.classList.toggle("fade-in");
+    }, 100);
 
     player.src = emojify[playerChoice];
     computer.src = emojify[computerChoice];
