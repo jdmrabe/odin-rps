@@ -10,8 +10,8 @@ const streak = document.getElementById("streak");
 
 let playerScore = 0,
   computerScore = 0,
-  haveWinner = false;
-playerStreak = 0;
+  haveWinner = false,
+  playerStreak = 0;
 
 const winningCombinations = {
   Rock: "Scissors",
@@ -27,19 +27,23 @@ const emojify = {
 
 getComputerChoice = () => possibleMoves[Math.floor(Math.random() * 3)];
 
+// Performs and computes winner of a round
 function playRound(playerMove, computerMove) {
   if (playerMove === computerMove) {
     return "ROUND TIE";
   }
   if (winningCombinations[playerMove] === computerMove) {
     playerScore++;
+    growText(playerTally);
     return "ROUND WIN!";
   } else {
     computerScore++;
+    growText(computerTally);
     return "ROUND LOSS";
   }
 }
 
+// Sets buttons with their corresponding moves and initializes round upon activation
 moves.forEach((button) => {
   button.addEventListener("click", () => {
     if (haveWinner === true) return;
@@ -60,6 +64,7 @@ moves.forEach((button) => {
   });
 });
 
+// Checks whether score threshold is met and spawn replay button
 function checkScore() {
   if (playerScore < 5 && computerScore < 5) {
     return;
@@ -78,7 +83,6 @@ function checkScore() {
 }
 
 function drawPlayAgain() {
-  // Remove replay button if it already exists
   const replayButton = document.getElementById("replay");
   if (replayButton) {
     replayButton.remove();
@@ -120,4 +124,11 @@ function toggleMoves() {
   moves.forEach((button) => {
     button.classList.toggle("disabled");
   });
+}
+
+function growText(element) {
+  element.classList.toggle("grow-up");
+  setTimeout(() => {
+    element.classList.toggle("grow-up");
+  }, 100);
 }
