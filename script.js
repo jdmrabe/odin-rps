@@ -74,9 +74,7 @@ function checkScore() {
   streak.innerText = playerStreak;
   drawPlayAgain();
 
-  moves.forEach((button) => {
-    button.classList.toggle("disabled");
-  });
+  toggleMoves();
 }
 
 function drawPlayAgain() {
@@ -109,13 +107,17 @@ function drawPlayAgain() {
 
     result.innerText = "REMATCH!";
 
-    moves.forEach((button) => {
-      button.classList.toggle("disabled");
-    });
+    toggleMoves();
   });
 }
 
 function updateScore() {
   playerTally.innerText = playerScore;
   computerTally.innerText = computerScore;
+}
+
+function toggleMoves() {
+  moves.forEach((button) => {
+    button.classList.toggle("disabled");
+  });
 }

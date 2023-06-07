@@ -51,6 +51,7 @@ button:hover {
 .disabled:hover {
   background-color: hsl(0, 0%, 80%);
   color: hsl(0, 0%, 60%);
+  cursor: default;
 }
 .container {
   display: flex;
