@@ -94,7 +94,7 @@ function drawPlayAgain() {
   replay.setAttribute("id", "replay");
   replay.setAttribute("class", "slide-down");
   replay.textContent = "PLAY AGAIN";
-  replay.style.width = "320px";
+  replay.style.width = "200px";
 
   container.appendChild(replay);
 
