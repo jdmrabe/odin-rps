@@ -30,9 +30,6 @@ footer > a {
   color: inherit;
   transition: all 300ms;
 }
-footer > a:hover {
-  transform: translateY(-0.25rem) scale(1.2);
-}
 button {
   background-color: hsl(0, 0%, 20%);
   border-radius: 0.6rem;
@@ -47,12 +44,7 @@ button {
 
   transition: all 300ms;
 }
-button:hover {
-  background-color: hsl(0, 0%, 80%);
-  color: hsl(0, 0%, 7%);
-}
-.disabled,
-.disabled:hover {
+.disabled {
   background-color: hsl(0, 0%, 80%);
   color: hsl(0, 0%, 60%);
   cursor: default;
@@ -62,7 +54,7 @@ button:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-block: 100px;
+  padding-top: 1rem;
   gap: 1rem;
   width: 100%;
 }
@@ -82,6 +74,7 @@ button:hover {
 @media (max-width: 600px) {
   .game-container {
     flex-direction: column;
+    gap: 0;
   }
 }
 .game-container > * {
@@ -98,7 +91,7 @@ button:hover {
   flex-direction: column;
   align-items: stretch;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 .moves > * {
   flex: 0 1 0;
@@ -168,5 +161,15 @@ button:hover {
   }
   100% {
     transform: translateY(0);
+  }
+}
+
+@media (hover: hover) {
+  footer > a:hover {
+    transform: translateY(-0.25rem) scale(1.2);
+  }
+  button:hover {
+    background-color: hsl(0, 0%, 80%);
+    color: hsl(0, 0%, 7%);
   }
 }
