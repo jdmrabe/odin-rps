@@ -122,6 +122,17 @@ button {
   animation: growUp ease-in-out 70ms;
 }
 
+.player-container,
+.computer-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.name-label {
+  font-size: 1rem;
+  color:hsl(0, 0%, 50%)
+}
+
 #result {
   text-align: center;
   flex: auto;
