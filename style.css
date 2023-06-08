@@ -91,7 +91,7 @@ button:hover {
   align-items: center;
 }
 .image-container {
-  gap: inherit;
+  gap: 3.5rem;
 }
 .moves {
   display: flex;
