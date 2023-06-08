@@ -30,23 +30,23 @@ getComputerChoice = () => possibleMoves[Math.floor(Math.random() * 3)];
 // Performs and computes winner of a round
 function playRound(playerMove, computerMove) {
   if (playerMove === computerMove) {
-    return "ROUND TIE";
+    return "IT'S A TIE";
   }
   if (winningCombinations[playerMove] === computerMove) {
     playerScore++;
     growText(playerTally);
-    return "ROUND WIN!";
+    return "YOU WIN!";
   } else {
     computerScore++;
     growText(computerTally);
-    return "ROUND LOSS";
+    return "YOU LOSE";
   }
 }
 
 // Sets buttons with their corresponding moves and initializes round upon activation
 moves.forEach((button) => {
   button.addEventListener("click", () => {
-    if (haveWinner === true) return;
+    if (haveWinner === true || playerScore === 5 || computerScore === 5) return;
     let playerChoice = button.id;
     let computerChoice = getComputerChoice();
 
@@ -71,9 +71,11 @@ function checkScore() {
   } else if (playerScore === 5) {
     result.innerText = "PLAYER WINS!";
     playerStreak++;
+    addGlow(streak);
   } else {
     result.innerText = "COMPUTER WINS!";
     playerStreak = 0;
+    streak.style.removeProperty("text-shadow");
   }
   haveWinner = true;
   streak.innerText = playerStreak;
@@ -130,5 +132,15 @@ function growText(element) {
   element.classList.toggle("grow-up");
   setTimeout(() => {
     element.classList.toggle("grow-up");
-  }, 100);
+  }, 70);
+}
+
+function addGlow(element) {
+  let currentGlow = element.style.textShadow;
+
+  if (currentGlow) {
+    currentGlow += ", ";
+  }
+  element.style.textShadow =
+    currentGlow + "0px 0px 20px rgba(255, 255, 255, 0.6)";
 }

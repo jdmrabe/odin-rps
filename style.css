@@ -13,7 +13,7 @@ body {
   align-items: center;
   gap: 1rem;
   font-size: 2rem;
-  height: 100vh;
+  min-height: 100vh;
 }
 footer {
   font-size: 1.25rem;
@@ -102,8 +102,8 @@ button:hover {
   animation: slideUp ease 200ms forwards;
 }
 .grow-up {
-  transition: all 100ms;
-  animation: growUp ease-in-out 100ms;
+  transition: all 70ms;
+  animation: growUp ease-in-out 70ms;
 }
 #result {
   flex: auto;
@@ -146,7 +146,7 @@ button:hover {
   0% {
     transform: translateY(0);
   }
-  80% {
+  50% {
     transform: translateY(-0.5rem);
   }
   100% {
