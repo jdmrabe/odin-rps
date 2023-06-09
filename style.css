@@ -192,6 +192,11 @@ button {
   footer > a:hover {
     transform: translateY(-0.25rem) scale(1.2);
   }
+  .disabled:hover {
+    background-color: hsl(0, 0%, 80%);
+    color: hsl(0, 0%, 60%);
+    cursor: default;
+  }
   button:hover {
     background-color: hsl(0, 0%, 80%);
     color: hsl(0, 0%, 7%);
